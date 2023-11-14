@@ -28,6 +28,7 @@ termux-change-repo
 pkg update -y -o Dpkg::Options::="--force-confold"
 pkg upgrade -y -o Dpkg::Options::="--force-confold"
 pkg uninstall dbus -y
+pkg install apt-utils dialog -y
 pkg install wget ncurses-utils dbus proot-distro x11-repo tur-repo pulseaudio -y
 
 #Create default directories
@@ -39,6 +40,7 @@ setup_proot() {
 proot-distro install debian
 proot-distro login debian --shared-tmp -- env DISPLAY=:1.0 apt update
 proot-distro login debian --shared-tmp -- env DISPLAY=:1.0 apt upgrade -y
+proot-distro login debian --shared-tmp -- env DISPLAY=:1.0 apt install apt-utils dialog -y
 proot-distro login debian --shared-tmp -- env DISPLAY=:1.0 apt install sudo wget nala jq flameshot conky-all -y
 
 #Create user
@@ -280,10 +282,8 @@ chmod +x $HOME/../usr/bin/kill_termux_x11
 
 setup_theme() {
 #Download Wallpaper
-wget https://raw.githubusercontent.com/phoenixbyrd/Termux_XFCE/main/peakpx.jpg
-wget https://raw.githubusercontent.com/phoenixbyrd/Termux_XFCE/main/dark_waves.png
-mv peakpx.jpg $HOME/../usr/share/backgrounds/xfce/
-mv dark_waves.png $HOME/../usr/share/backgrounds/xfce/
+wget https://github.com/danyarlyn/Wallpapers/blob/main/roto-nui-volcane-french-polynesia.jpg
+mv oto-nui-volcane-french-polynesia.jpg $HOME/../usr/share/backgrounds/xfce/
 
 #Install WhiteSur-Dark Theme
 wget https://github.com/vinceliuice/WhiteSur-gtk-theme/archive/refs/tags/2023-04-26.zip
