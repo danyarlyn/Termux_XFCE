@@ -27,6 +27,7 @@ termux-change-repo
 
 pkg update -y -o Dpkg::Options::="--force-confold"
 pkg upgrade -y -o Dpkg::Options::="--force-confold"
+termux-change-repo
 pkg uninstall dbus -y
 pkg install wget ncurses-utils dbus proot-distro x11-repo tur-repo pulseaudio -y
 
@@ -358,6 +359,7 @@ rm setup.sh
 source .bashrc
 termux-reload-settings
 
+termux-change-repo
 apt update
 apt upgrade
 
