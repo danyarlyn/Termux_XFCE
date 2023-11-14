@@ -274,7 +274,7 @@ chmod +x $HOME/../usr/bin/kill_termux_x11
 setup_theme() {
 #Download Wallpaper
 wget https://github.com/danyarlyn/Wallpapers/blob/main/roto-nui-volcane-french-polynesia.jpg
-mv oto-nui-volcane-french-polynesia.jpg $HOME/../usr/share/backgrounds/xfce/
+mv roto-nui-volcane-french-polynesia.jpg $HOME/../usr/share/backgrounds/xfce/
 
 #Install WhiteSur-Dark Theme
 wget https://github.com/vinceliuice/WhiteSur-gtk-theme/archive/refs/tags/2023-04-26.zip
